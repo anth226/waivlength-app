@@ -2,7 +2,6 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import {
   persistCombineReducers,
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -10,7 +9,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // reducers
 import AuthUser from '../features/AuthUser/AuthUserSlice'
@@ -20,7 +19,7 @@ import constants from '../common/utils/constants'
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage,
+  storage: AsyncStorage,
 }
 
 const persistedReducer = persistCombineReducers(persistConfig, {
