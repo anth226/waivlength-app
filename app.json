@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "waivlength-app",
-    "slug": "waivlength-app",
+    "name": "Waivlength",
+    "slug": "Waivlength",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/common/assets/images/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/common/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,16 +17,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/common/assets/images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/common/assets/images/favicon.png"
     }
   }
 }

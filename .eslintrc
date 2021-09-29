@@ -1,0 +1,22 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb-typescript-prettier"],
+  "rules": {
+    "react/jsx-props-no-spreading": ["off"],
+    "class-methods-use-this": "off",
+    "react/prop-types": "off",
+    "import/no-extraneous-dependencies": ["off"],
+    "import/no-named-as-default": ["off"],
+    "@typescript-eslint/no-unused-vars": ["off"],
+    "@typescript-eslint/no-unused-vars-experimental": ["off"],
+    "no-useless-constructor": ["off"],
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "jsx-a11y/anchor-is-valid": ["off"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "react/jsx-filename-extension": 0,
+
+    // react config
+    "react/style-prop-object": 0
+  }
+}
