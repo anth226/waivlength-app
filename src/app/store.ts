@@ -2,7 +2,6 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import {
   persistCombineReducers,
   persistStore,
-  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -14,6 +13,7 @@ import storage from 'redux-persist/lib/storage'
 
 // reducers
 import AuthUser from '../features/AuthUser/AuthUserSlice'
+import Theme from '../features/Theme/ThemeSlice'
 
 import constants from '../common/utils/constants'
 
@@ -25,6 +25,7 @@ const persistConfig = {
 
 const persistedReducer = persistCombineReducers(persistConfig, {
   authUser: AuthUser,
+  theme: Theme,
 })
 
 export const store = configureStore({
