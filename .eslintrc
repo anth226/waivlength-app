@@ -1,5 +1,8 @@
 {
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "extends": ["airbnb-typescript-prettier"],
   "rules": {
     "react/jsx-props-no-spreading": ["off"],
@@ -15,6 +18,8 @@
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "react/jsx-filename-extension": 0,
+    "global-require": 0,
+    "import/no-unresolved": 0,
 
     // react config
     "react/style-prop-object": 0

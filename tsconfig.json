@@ -5,6 +5,13 @@
     "strict": true,
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/common/components/*"],
+      "@utils/*": ["src/common/utils/*"]
+    }
   }
 }
