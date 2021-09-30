@@ -13,6 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // reducers
 import AuthUser from '../features/AuthUser/AuthUserSlice'
+import Theme from '../features/Theme/ThemeSlice'
 
 import constants from '../common/utils/constants'
 
@@ -24,6 +25,7 @@ const persistConfig = {
 
 const persistedReducer = persistCombineReducers(persistConfig, {
   authUser: AuthUser,
+  theme: Theme,
 })
 
 export const store = configureStore({
