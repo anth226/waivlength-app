@@ -1,13 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { useAppSelector } from '@app/hooks'
 
-import { useAppSelector } from '../app/hooks'
-import constants from '../common/utils/constants'
+import Toggle from '@components/FormControls/Toggle'
 
 const styles = StyleSheet.create({
   root: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -20,11 +19,7 @@ const Routes: React.FC = () => {
 
   return (
     <View style={styles.root}>
-      {token ? (
-        <Text>User is authenticated!</Text>
-      ) : (
-        <Text>User is not authenticated!</Text>
-      )}
+      {token ? <Text>User is authenticated!</Text> : <Toggle />}
     </View>
   )
 }
