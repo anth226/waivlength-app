@@ -1,6 +1,19 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, TextStyle } from 'react-native'
 
-const styles = StyleSheet.create({
+interface Styles {
+  title: TextStyle
+  h1: TextStyle
+  h2Bold: TextStyle
+  h2: TextStyle
+  h3: TextStyle
+  body: TextStyle
+  bodySmall: TextStyle
+  caption: TextStyle
+  button: TextStyle
+  buttonLarge: TextStyle
+}
+
+const styles = StyleSheet.create<Styles>({
   title: {
     fontFamily: 'Poppins-Bold',
     fontSize: 39,

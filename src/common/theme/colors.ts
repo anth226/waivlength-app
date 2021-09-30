@@ -25,6 +25,8 @@ const Colors = {
       c3: '#FFFFFF',
     },
   },
+  white: '#FFFFFF',
+  black: '#000000',
 }
 
 export default Colors

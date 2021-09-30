@@ -11,7 +11,9 @@ module.exports = function (api) {
           extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
           alias: {
             '@app': './src/app',
+            '@assets': './src/common/assets',
             '@components': './src/common/components',
+            '@theme': './src/common/theme',
             '@utils': './src/common/utils',
           },
         },
