@@ -9,13 +9,19 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   root: {
-    borderRadius: spacing(2),
-    paddingHorizontal: spacing(2),
-    paddingVertical: spacing(1),
-    backgroundColor: 'blue',
+    height: 54,
+    borderRadius: spacing(3.375),
+    paddingHorizontal: spacing(1.65),
+    backgroundColor: Colors.light.main.blue,
+    justifyContent: 'center',
   },
   text: {
+    fontSize: 18,
+    fontWeight: '700',
+    lineHeight: 28,
+    letterSpacing: -0.036,
     color: Colors.white,
+    textAlign: 'center',
   },
 })
 

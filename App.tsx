@@ -5,7 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import { persistor, store } from '@app/store'
 import loadFonts from '@utils/fonts'
-import Routes from 'routes'
+import Routes from './src/routes'
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(true)
@@ -24,7 +24,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <Routes />
       </PersistGate>
     </Provider>

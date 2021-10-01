@@ -1,26 +1,18 @@
 import React from 'react'
-import { Text, TextStyle, StyleSheet, TextProps } from 'react-native'
+import { Text, StyleSheet, TextProps } from 'react-native'
 import { useAppSelector } from '@app/hooks'
 
 import styles from './styles'
 import Colors from '../../theme/colors'
 
 export interface TypographyProps extends TextProps {
-  variant?:
-    | 'title'
-    | 'h1'
-    | 'h2'
-    | 'h2Bold'
-    | 'h3'
-    | 'body'
-    | 'bodySmall'
-    | 'caption'
-    | 'button'
-    | 'buttonLarge'
+  variant?: 'title' | 'titleSmall' | 'body' | 'bodySmall'
+  color?: 'primary' | 'secondary' | 'tertiary' | 'white' | 'black'
 }
 
 const Typography: React.FC<TypographyProps> = ({
   variant = 'body',
+  color = 'primary',
   style: propStyle,
   children,
 }) => {
@@ -28,14 +20,19 @@ const Typography: React.FC<TypographyProps> = ({
   const { isDarkMode } = useAppSelector((state) => state.theme)
 
   const currentColor = React.useMemo(() => {
-    if (variant === 'caption') {
-      return '#656565'
+    if (color === 'white') {
+      return Colors.white
     }
+
+    if (color === 'black') {
+      return Colors.black
+    }
+
     if (isDarkMode) {
-      return Colors.dark.grays.c1
+      return Colors.dark.text[color]
     }
-    return Colors.light.grays.c1
-  }, [variant, isDarkMode])
+    return Colors.light.text[color]
+  }, [color, isDarkMode])
 
   return (
     <Text

@@ -2,68 +2,35 @@ import { StyleSheet, TextStyle } from 'react-native'
 
 interface Styles {
   title: TextStyle
-  h1: TextStyle
-  h2Bold: TextStyle
-  h2: TextStyle
-  h3: TextStyle
+  titleSmall: TextStyle
   body: TextStyle
   bodySmall: TextStyle
-  caption: TextStyle
-  button: TextStyle
-  buttonLarge: TextStyle
 }
 
 const styles = StyleSheet.create<Styles>({
   title: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 39,
-    lineHeight: 58.5,
+    fontFamily: 'HelveticaNeue-Bold',
+    fontSize: 34,
+    lineHeight: 38,
+    letterSpacing: -0.1394,
   },
-  h1: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 31.25,
-    lineHeight: 46.88,
-  },
-  h2Bold: {
-    fontFamily: 'Poppins-Bold',
-    fontSize: 25,
-    lineHeight: 37.5,
-  },
-  h2: {
-    fontFamily: 'Poppins',
-    fontSize: 25,
-    lineHeight: 37.5,
-  },
-  h3: {
-    fontFamily: 'Poppins',
-    fontSize: 20,
-    lineHeight: 30,
+  titleSmall: {
+    fontFamily: 'HelveticaNeue-Bold',
+    fontSize: 24,
+    lineHeight: 23,
+    letterSpacing: -0.0984,
   },
   body: {
-    fontFamily: 'Poppins',
+    fontFamily: 'HelveticaNeue',
     fontSize: 16,
     lineHeight: 24,
+    letterSpacing: -0.032,
   },
   bodySmall: {
-    fontFamily: 'Poppins',
+    fontFamily: 'HelveticaNeue',
     fontSize: 14,
     lineHeight: 21,
-  },
-  caption: {
-    fontFamily: 'Poppins',
-    fontSize: 12.8,
-    lineHeight: 19.2,
-    color: '#656565',
-  },
-  button: {
-    fontFamily: 'Poppins',
-    fontSize: 16,
-    lineHeight: 24,
-  },
-  buttonLarge: {
-    fontFamily: 'Poppins',
-    fontSize: 20,
-    lineHeight: 30,
+    letterSpacing: -0.028,
   },
 })
 

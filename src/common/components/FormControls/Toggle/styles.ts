@@ -12,11 +12,12 @@ interface Styles {
 
 const styles = StyleSheet.create<Styles>({
   root: {
-    borderColor: Colors.dark.grays.c3,
-    borderWidth: 1,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
     borderRadius: spacing(3),
-    paddingVertical: 4,
-    paddingHorizontal: 2,
+    borderColor: '#C4C4C4',
+    borderWidth: 1,
   },
   inner: {
     flex: 1,
@@ -24,6 +25,7 @@ const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
   },
   item1: {
+    flex: 1,
     flexBasis: 1,
     flexGrow: 1,
     textAlign: 'center',

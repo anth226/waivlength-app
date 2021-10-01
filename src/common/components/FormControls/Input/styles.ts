@@ -18,8 +18,7 @@ const styles = StyleSheet.create<Styles>({
     paddingHorizontal: spacing(2),
     paddingVertical: spacing(1),
     backgroundColor: Colors.white,
-    borderRadius: spacing(1),
-    borderColor: Colors.dark.grays.c2,
+    borderRadius: spacing(1.25),
     borderWidth: 1,
   },
   input: {

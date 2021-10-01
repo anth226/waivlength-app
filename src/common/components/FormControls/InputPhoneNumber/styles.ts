@@ -15,7 +15,7 @@ const styles = StyleSheet.create<Styles>({
     alignItems: 'center',
     backgroundColor: Colors.white,
     borderRadius: spacing(1),
-    borderColor: Colors.dark.grays.c2,
+    borderColor: '#4E4E4E',
     borderWidth: 1,
   },
   phone: {

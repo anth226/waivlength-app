@@ -2,12 +2,12 @@ import * as Font from 'expo-font'
 
 const loadFonts = async (): Promise<void> => {
   await Font.loadAsync({
-    Poppins: {
-      uri: require('../assets/fonts/Poppins-Regular.ttf'),
+    HelveticaNeue: {
+      uri: require('../assets/fonts/HelveticaNeue-Regular.otf'),
       display: Font.FontDisplay.FALLBACK,
     },
-    'Poppins-Bold': {
-      uri: require('../assets/fonts/Poppins-Bold.ttf'),
+    'HelveticaNeue-Bold': {
+      uri: require('../assets/fonts/HelveticaNeue-Bold.otf'),
       display: Font.FontDisplay.FALLBACK,
     },
   })

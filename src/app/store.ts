@@ -8,24 +8,37 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
+  createTransform,
 } from 'redux-persist'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // reducers
 import AuthUser from '../features/AuthUser/AuthUserSlice'
 import Theme from '../features/Theme/ThemeSlice'
+import Signup from '../features/Signup/SignupSlice'
 
 import constants from '../common/utils/constants'
 
+const transform = createTransform(
+  (inboundState, key) => {
+    return inboundState
+  },
+  (outboundState, key) => {
+    return JSON.parse(outboundState as string)
+  },
+)
+
 const persistConfig = {
   key: 'root',
-  version: 1,
   storage: AsyncStorage,
+  // blacklist: ['signup'],
+  transforms: [transform],
 }
 
 const persistedReducer = persistCombineReducers(persistConfig, {
   authUser: AuthUser,
   theme: Theme,
+  signup: Signup,
 })
 
 export const store = configureStore({

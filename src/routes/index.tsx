@@ -1,26 +1,40 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Text } from 'react-native'
+
 import { useAppSelector } from '@app/hooks'
+import { UnauthenticatedStack } from '@utils/routeTypes'
+import { transparentHeader } from '@utils/headerConfig'
 
-import Toggle from '@components/FormControls/Toggle'
+// screens
+import LoginPage from '@pages/login'
+import Step1 from '@pages/signup/step1'
+import Step2 from '@pages/signup/step2'
+import Step3 from '@pages/signup/step3'
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
+const UnauthenticatedRootStack =
+  createNativeStackNavigator<UnauthenticatedStack>()
 
 const Routes: React.FC = () => {
   const { token } = useAppSelector((state) => state.authUser)
 
   return (
-    <View style={styles.root}>
-      {token ? <Text>User is authenticated!</Text> : <Toggle />}
-    </View>
+    <NavigationContainer>
+      {token ? (
+        <Text>User is authenticated!</Text>
+      ) : (
+        <UnauthenticatedRootStack.Navigator
+          initialRouteName="Login"
+          screenOptions={transparentHeader}
+        >
+          <UnauthenticatedRootStack.Screen name="Login" component={LoginPage} />
+          <UnauthenticatedRootStack.Screen name="Signup1" component={Step1} />
+          <UnauthenticatedRootStack.Screen name="Signup2" component={Step2} />
+          <UnauthenticatedRootStack.Screen name="Signup3" component={Step3} />
+        </UnauthenticatedRootStack.Navigator>
+      )}
+    </NavigationContainer>
   )
 }
 

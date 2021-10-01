@@ -6,18 +6,21 @@ import Typography, { TypographyProps } from '@components/Typography'
 import styles from './styles'
 
 export interface ButtonContainedProps extends RectButtonProperties {
-  textVariant?: TypographyProps['variant']
+  fullWidth?: boolean
   textStyle?: TextStyle
 }
 
 const ButtonContained: React.FC<ButtonContainedProps> = ({
   children,
   style: rootStyle,
-  textVariant,
+  fullWidth = false,
   textStyle,
   ...others
 }) => {
-  const combinedRootStyles = StyleSheet.compose(styles.root, rootStyle)
+  const combinedRootStyles = StyleSheet.compose(
+    [styles.root, { width: fullWidth ? '100%' : 'auto' }],
+    rootStyle,
+  )
   const combinedTextStyles = StyleSheet.compose(
     styles.text,
     textStyle,
@@ -26,9 +29,7 @@ const ButtonContained: React.FC<ButtonContainedProps> = ({
   return (
     <RectButton {...others} style={combinedRootStyles}>
       <View accessible accessibilityRole="button">
-        <Typography variant={textVariant} style={combinedTextStyles}>
-          {children}
-        </Typography>
+        <Text style={combinedTextStyles}>{children}</Text>
       </View>
     </RectButton>
   )
